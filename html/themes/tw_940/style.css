@@ -1,0 +1,127 @@
+
+header.h_m {
+	height:70px;
+}
+
+#ModuleContents {
+	padding:10px 0 20px 0;
+}
+.nav a	{ display: block; float: left; padding: 10px 5px; text-decoration: none;border:none;}
+.nav a:hover			{ text-decoration: none; }
+.nav a:active		{ position: relative; top: 0; }
+.nav ul {
+	margin:0 250px 0 150px;
+}
+.nav li {
+	list-style: none;
+	float: left;
+}
+.nav li a {
+	text-decoration: none;
+	padding: 12px 10px;
+	display: block;
+}
+
+#logo {
+	position:absolute;
+	top:0;
+	left:0;
+	width:150px;
+	height:150px;
+	z-index:1001;
+	padding-top:18px;
+}
+
+#logo a.sitename {
+	font-size: 150%;
+	font-family: 'Droid Serif', serif;
+	font-weight:bold;
+	padding:0 0 0 18px;
+	line-height:30px;
+	border:none;
+}
+
+
+/*------------------------------------*\
+p 					{ padding: 0 5px 0 5px; }
+\*------------------------------------*/
+
+ul 					{ list-style: none; }
+ul li 				{ margin: 0 5px; }
+
+#footer ,
+footer {
+	width: 100%;
+	min-height:50px;
+	padding: 5px 0;
+	text-align:center;
+	line-height:40px;
+	font-size: 90%;
+}
+#footer a ,
+footer a {
+	text-decoration:none;
+}
+
+#footer_menu {
+	padding-top:30px;
+}
+
+#footer #level_1000,
+footer #level_1000{
+	font-size: 100%;
+	line-height:2em;
+}
+#footer #level_1000 h3,
+footer #level_1000 h3,
+#footer #level_1000 h4,
+footer #level_1000 h4 {
+	font-size: 110%;
+	line-height:2em;
+}
+
+pre {overflow: auto; font-size: 12px; }
+
+
+/* XOOPS Code & Quote */
+.xoopsCode {
+  font-family: "Courier New",Courier,monospace;
+	font-size:12px;
+  padding: 6px;
+	margin:10px;
+	margin-bottom:0;
+	word-break: break-all;
+}
+.xoopsQuote {
+  padding: 3px;
+}
+
+.xoopsCode pre{
+  white-space: -moz-pre-wrap; /* Mozilla */
+  white-space: -pre-wrap;     /* Opera 4-6 */
+  white-space: -o-pre-wrap;   /* Opera 7 */
+  white-space: pre-wrap;      /* CSS3 */
+  word-wrap: break-word;      /* IE 5.5+ */
+}
+
+/* for xugj_date */
+.new1 {
+	margin-left:5px;
+	font-weight:bold;
+}
+.new2 {
+	margin-left:5px;
+}
+
+#usermenu li ,
+ul#privatemessages li,
+#mainmenu li {
+	line-height:1.5;
+	margin:0 0 0 7px;
+}
+
+#theme_login_block_div ,
+#theme_login_block {
+	width:220px;
+	height:220px;
+}
