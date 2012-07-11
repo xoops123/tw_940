@@ -125,10 +125,10 @@ $menu_cache_file .= $GLOBALS['xoopsConfig']['language'].'.php' ;
 
 // for speed up hack
 if( ! empty( $_SESSION['redirect_message'] ) ) {
-	if( empty( $this->_tpl_vars['xoops_ccblocks'] ) ) $this->_tpl_vars['xoops_ccblocks'] = array() ;
-	array_unshift( $this->_tpl_vars['xoops_ccblocks'] , array( 'title' => 'Message' , 'content' => '<font color="red">'.$_SESSION['redirect_message'].'</font>' , 'weight' => 0 ) ) ;
-	$this->_tpl_vars['xoops_showcblock'] = 1 ;
-	$is_redirected = true ;
+//	if( empty( $this->_tpl_vars['xoops_ccblocks'] ) ) $this->_tpl_vars['xoops_ccblocks'] = array() ;
+//	array_unshift( $this->_tpl_vars['xoops_ccblocks'] , array( 'title' => 'Message' , 'content' => '<font color="red">'.$_SESSION['redirect_message'].'</font>' , 'weight' => 0 ) ) ;
+//	$this->_tpl_vars['xoops_showcblock'] = 1 ;
+//	$is_redirected = true ;
 
 	$this->assign( 'redirect_message',$_SESSION['redirect_message'] ) ;
 	$this->assign( 'is_redirected',TRUE ) ;

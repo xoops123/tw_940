@@ -1,0 +1,39 @@
+<{strip}>
+<{if $xoops_dirname == "webphoto"}>
+	<{foreach from=$xoops_breadcrumbs item="item"}>
+		<{if $item.url}>
+			<a href="<{$item.url}>"><{$item.name}></a> &nbsp;
+		<{/if}>
+	<{/foreach}>
+ 		<{$title_bread_crumb}>
+<{elseif $xoops_dirname == "piCal"}>
+	<{foreach from=$xoops_breadcrumbs item="item"}>
+		<{$item.name}>
+	<{/foreach}>
+<{elseif $xoops_dirname == "ccenter"}>
+	<{foreach from=$xoops_breadcrumbs item="item" name="loop"}>
+		<{if $smarty.foreach.loop.first}>
+			<{$item.name}>
+	  	<{/if}>
+	<{/foreach}>
+<{else}>
+	<{foreach from=$xoops_breadcrumbs item="item" name="loop"}>
+		<{if $smarty.foreach.loop.first}>
+			<{if $item.url}>
+				<a href="<{$item.url}>"><{$item.name}></a>
+		  	<{else}>
+		        <{$item.name}>
+		  	<{/if}>
+	  	<{else}>
+			<{if $item.url}>
+				&nbsp;<a href="<{$item.url}>"><{$item.name}></a>
+		  	<{else}>
+		        &nbsp;<{$item.name}>
+		  	<{/if}>
+	  	<{/if}>
+	<{/foreach}>
+		<{if $xoops_dirname == "gallery"}>
+			(<{$photo_num_total}>)
+		<{/if}>
+<{/if}>
+<{/strip}>

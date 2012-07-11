@@ -1,0 +1,189 @@
+<header id="overview">
+<div class="container">
+	<h1><{$xoops_sitename}>&nbsp;<small><{include file="`$xoops_theme`/theme_title.html"}></small></h1>
+
+<{section loop=$xoops_ccblocks name=ccloop}><{* center-center-column *}>
+<{if $smarty.section.ccloop.first}> 
+	<div class="row">
+		<{foreach item=block from=$xoops_ccblocks name=ccloop}>
+			<{if $block.title|strstr:"[["}>
+				<div class="<{$block.title|xoops_blocktitleclass}>">
+					<{if ! $smarty.foreach.ccloop.first}>
+						<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+					<{/if}>
+					<{$block.content}>
+				</div>
+			<{else}>
+				<div class="span4">
+					<{if ! $smarty.foreach.ccloop.first}>
+						<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+					<{/if}>
+					<{$block.content}>
+				</div>
+			<{/if}>
+		<{/foreach}>
+	</div>
+<{/if}>
+<{/section}>
+
+</div><!-- /container -->
+</header>
+
+<div id="wrap"><{* main contents *}>
+
+<div class="container">
+<div class="row">
+
+<{if $xoops_showlblock == 1}>
+<{foreach item=block from=$xoops_lblocks name=lbloop}>
+	<{if $smarty.foreach.lbloop.first}>
+		<{if $block.title|strstr:"[["}>
+<div id="side_bar" class="<{$block.title|xoops_blocktitleclass}>"><{* side_bar left-column *}>
+		<{else}>
+<div id="side_bar" class="span3"><{* side_bar left-column *}>
+		<{/if}>
+	<{/if}>
+<{/foreach}>
+	<div class="row">
+		<{foreach item=block from=$xoops_lblocks name=lbloop}>
+			<{if $block.title|strstr:"[["}>
+				<div class="<{$block.title|xoops_blocktitleclass}>">
+					<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+					<{$block.content}>
+				</div>
+			<{else}>
+				<div class="span3">
+					<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+					<{$block.content}>
+				</div>
+			<{/if}>
+		<{/foreach}>
+	</div>
+</div><!-- /side_bar -->
+<{/if}>
+
+<{* xoops contents *}>
+<{if $xoops_showlblock == 1}>
+<{foreach item=block from=$xoops_lblocks name=lbloop}>
+	<{if $smarty.foreach.lbloop.first}>
+		<{if $block.title|strstr:"[["}>
+			<{if $block.title|xoops_blocktitleclass == "span1"}>
+<div class="span11">
+			<{elseif $block.title|xoops_blocktitleclass == "span2"}>
+<div class="span10">
+			<{elseif $block.title|xoops_blocktitleclass == "span3"}>
+<div class="span9">
+			<{elseif $block.title|xoops_blocktitleclass == "span4"}>
+<div class="span8">
+			<{elseif $block.title|xoops_blocktitleclass == "span5"}>
+<div class="span7">
+			<{elseif $block.title|xoops_blocktitleclass == "span6"}>
+<div class="span6">
+			<{else}>
+<div class="span9">
+			<{/if}>
+		<{else}>
+<div class="span9">
+		<{/if}>
+	<{/if}>
+<{/foreach}>
+<{else}>
+<div class="span12">
+<{/if}>
+	<article id="main-content">
+			<{$xoops_contents}>
+	</article>
+</div>
+
+</div><!-- /row -->
+</div><!-- /container -->
+</div><!-- /wrap -->
+
+
+<{section loop=$xoops_clblocks name=clloop}>
+<{if $smarty.section.clloop.first}> 
+
+<section id="level_2"><{* center-left-column *}>
+<div class="container">
+	<!-- h2 Heading from clloop.first -->
+	<{foreach item=block from=$xoops_clblocks name=clloop}>
+		<{if $smarty.foreach.clloop.first}>
+			<{if $block.title|strstr:"[["}>
+					<{if ! $block.title|strstr:"none"}><h2><{$block.title|xoops_blocktitleclassdel}></h2><{/if}>
+			<{else}>
+					<{if ! $block.title|strstr:"none"}><h2><{$block.title}></h2><{/if}>
+			<{/if}>
+		<{/if}>
+	<{/foreach}>
+	<div class="row">
+		<{foreach item=block from=$xoops_clblocks name=clloop}>
+			<{if $block.title|strstr:"[["}>
+				<div class="<{$block.title|xoops_blocktitleclass}>">
+					<{if ! $smarty.foreach.clloop.first}>
+						<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+					<{/if}>
+					<{$block.content}>
+				</div>
+			<{else}>
+				<div class="span2">
+					<{if ! $smarty.foreach.clloop.first}>
+						<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+					<{/if}>
+					<{$block.content}>
+				</div>
+			<{/if}>
+		<{/foreach}>
+	</div>
+</div><!-- /container -->
+</section>
+
+<{/if}>
+<{/section}>
+
+<{section loop=$xoops_crblocks name=crloop}>
+<{if $smarty.section.crloop.first}> 
+
+<section id="level_3"><{* center-right-column *}>
+<div class="container">
+	<!-- h2 Heading from crloop.first -->
+	<{foreach item=block from=$xoops_crblocks name=crloop}>
+		<{if $smarty.foreach.crloop.first}>
+			<{if $block.title|strstr:"[["}>
+					<{if ! $block.title|strstr:"none"}><h2><{$block.title|xoops_blocktitleclassdel}></h2><{/if}>
+			<{else}>
+					<{if ! $block.title|strstr:"none"}><h2><{$block.title}></h2><{/if}>
+			<{/if}>
+		<{/if}>
+	<{/foreach}>
+	<div class="row">
+		<{foreach item=block from=$xoops_crblocks name=crloop}>
+			<{if ! $smarty.foreach.crloop.first}>
+				<{if $block.title|strstr:"[["}>
+					<div class="<{$block.title|xoops_blocktitleclass}>">
+						<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+						<{$block.content}>
+					</div>
+				<{else}>
+					<div class="span2">
+						<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+						<{$block.content}>
+					</div>
+				<{/if}>
+			<{else}>
+				<{if $block.title|strstr:"[["}>
+					<div class="<{$block.title|xoops_blocktitleclass}>">
+						<{$block.content}>
+					</div>
+				<{else}>
+					<div class="span2">
+						<{$block.content}>
+					</div>
+				<{/if}>
+			<{/if}>
+		<{/foreach}>
+	</div>
+</div><!-- /container -->
+</section>
+
+<{/if}>
+<{/section}>

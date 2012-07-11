@@ -24,3 +24,16 @@ jQuery(document).ready(function() {
 	});
 });
 </script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	var url = location.href.split('index\.php')[0] ; 
+	jQuery("ul#mainmenu,ul#usermenu").addClass("nav","nav-list");
+	jQuery("input").addClass("btn");
+	jQuery('#mainmenu a[href="'+url+'"],#usermenu a[href="'+url+'"]').addClass('active');
+	jQuery('h2.head').each(function(){
+		var txt = jQuery(this).html();
+		jQuery(this).html(txt.replace(/.*コメント.*/gi,'&ldquo;'));
+		jQuery(this).css({'font-size':'60px','color':'#ccc','padding-top':'30px','margin-bottom':'-30px','border':'none'});
+	});
+});
+</script>

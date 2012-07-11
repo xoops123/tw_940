@@ -24,5 +24,6 @@ define('_MB_USER_SECURE', 'SSL');
 define('_THEME_LANGUAGE_COMMENT', 'コメントする');
 define('_THEME_LANGUAGE_MAIN_MENU', 'メインメニュー');
 define('_THEME_LANGUAGE_LANGUAGE_GUEST', 'ゲスト');
+define('_MD_D3FORUM_VOTEPOINTDSCBEST','いいね！');
 
 ?>

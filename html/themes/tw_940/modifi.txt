@@ -1,0 +1,54 @@
+d3forumについて
+=============================================================
+「参考にならない」ボタンが気に入らないので、次のように変更した
+=============================================================
+テーマ下テンプレート　inc_eachpost.html
+101行目あたりの
+	<span class="d3f_vote">
+		<{$smarty.const._MD_D3FORUM_VOTECOUNT}>:<{$post.votes_count}>
+		<{$smarty.const._MD_D3FORUM_VOTEPOINTAVG}>:<{$post.votes_avg|string_format:"%.2f"}>
+	</span>
+を削除するかコメントアウトする。
+
+116行目あたりの
+		<form action="<{$mod_url}>/index.php" method="get" style="display:inline;">
+			<input type="hidden" name="page" value="vote_to_post" />
+			<input type="hidden" name="post_id" value="<{$post.id}>" />
+			<input type="hidden" name="point" value="0" />
+			<{if $caller == 'listposts'}>
+				<input type="hidden" name="ret_name" value="topic_id" />
+				<input type="hidden" name="ret_val" value="<{$topic.id}>" />
+			<{/if}>
+			<input type="submit" value="<{$smarty.const._MD_D3FORUM_VOTEPOINTDSCWORST}>" />
+		</form>
+を削除するかコメントアウトする。（これが、「参考にならない」部分）
+
+106行目あたりの
+		<form action="<{$mod_url}>/index.php" method="get" style="display:inline;">
+			<input type="hidden" name="page" value="vote_to_post" />
+			<input type="hidden" name="post_id" value="<{$post.id}>" />
+			<input type="hidden" name="point" value="10" />
+			<{if $caller == 'listposts'}>
+				<input type="hidden" name="ret_name" value="topic_id" />
+				<input type="hidden" name="ret_val" value="<{$topic.id}>" />
+			<{/if}>
+			<input type="submit" value="<{$smarty.const._MD_D3FORUM_VOTEPOINTDSCBEST}>" />
+		</form>
+の最後にあるinputを改造して、ボタンに「いいね！」の数を表示させる
+		<form action="<{$mod_url}>/index.php" method="get" style="display:inline;">
+			<input type="hidden" name="page" value="vote_to_post" />
+			<input type="hidden" name="post_id" value="<{$post.id}>" />
+			<input type="hidden" name="point" value="10" />
+			<{if $caller == 'listposts'}>
+				<input type="hidden" name="ret_name" value="topic_id" />
+				<input type="hidden" name="ret_val" value="<{$topic.id}>" />
+			<{/if}>
+			<input type="submit" value="<{$smarty.const._MD_D3FORUM_VOTEPOINTDSCBEST}><{if !$post.votes_count == 0}>:<{$post.votes_count}><{/if}>" />
+		</form>
+
+テーマ下のlanguageにて、d3forumの言語定数を上書きする設定を追加（元は、「参考になった」）
+define('_MD_D3FORUM_VOTEPOINTDSCBEST','いいね！');
+
+=============================================================
+
+

@@ -8,8 +8,6 @@
 <head>
 <{include file="`$smarty.const.XOOPS_ROOT_PATH`/common/ogp/meta_add.html"}>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
-<link rel="stylesheet" type="text/css" href="<{$xoops_imageurl}>style.css" />
 <link rel="stylesheet" type="text/css" href="<{$xoops_imageurl}>css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="<{$xoops_imageurl}>css/bootstrap-responsive.css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -18,12 +16,15 @@
 <script type="text/javascript" src="<{$xoops_imageurl}>js/jquery-1.7.1.min.js"></script>
 <{/if}>
 <{if $xoops_module_header}><{$xoops_module_header}><{/if}><{if $xoops_block_header}><{$xoops_block_header}><{/if}>
+<link rel="stylesheet" type="text/css" href="<{$xoops_imageurl}>style.css" />
+<link rel="stylesheet" type="text/css" href="<{$xoops_imageurl}>modules.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_imageurl}>colors.css" charset="utf-8" />
 <{include file="`$xoops_theme`/theme_redirect_js.html"}>
-<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<{include file="`$xoops_theme`/theme_ext_js.html"}>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </head>
 <body class="L<{$xoops_showlblock}>R<{$xoops_showrblock}> <{strip}>
 <{if $smarty.server.SCRIPT_FILENAME|basename == "index.php" and $smarty.server.SCRIPT_FILENAME|dirname|basename == $smarty.const.XOOPS_ROOT_PATH|basename}>
@@ -38,14 +39,13 @@
 	<{/if}>
 <{/if}>
 "><{/strip}>
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top<{if $xoops_isadmin}><{if $xoops_dirname == "wordpress"}> fixed2<{elseif $xoops_dirname == "xpress"}> fixed2<{/if}><{/if}>">
   <div class="navbar-inner">
     <div class="container">
       <div class="nav-collapse collapse">
         <ul class="nav">
-			<li><a href="<{$xoops_url}>/" class="sitename"><{$xoops_sitename}></a></li>
 			<{if $menu0.dirname == $xoops_dirname}>
-				<li><a href="<{$xoops_url}>/" class="act"><{$smarty.const._THEME_LANGUAGE_HOME_NAME}></a></li>
+				<li class="active"><a href="<{$xoops_url}>/"><{$smarty.const._THEME_LANGUAGE_HOME_NAME}></a></li>
 			<{else}>
 				<li><a href="<{$xoops_url}>/"><{$smarty.const._THEME_LANGUAGE_HOME_NAME}></a></li>
 			<{/if}>
@@ -56,7 +56,7 @@
 						<{else}>
 								<{assign var="menu0_class" value=""}>
 						<{/if}>
-				<li><a href="<{$xoops_url}>/modules/<{$menu0.dirname}>/<{$menu0.url}>" <{if $menu0.dirname == $xoops_dirname}> class="act"<{/if}>><{$menu0.name}></a></li>
+				<li<{if $menu0.dirname == $xoops_dirname}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/<{$menu0.dirname}>/<{$menu0.url}>"><{$menu0.name}></a></li>
 			<{/foreach}>
         </ul>
       </div>
@@ -64,62 +64,21 @@
   </div>
 </div>
 
-<div class="container">
-
-<header class="h_m" id="overview">
-</header>
-
-
-<section id="level_0"><{* BlockWeight == 0 *}>
-	<div class="row">
-		<{include file="`$xoops_theme`/theme_level_0.html"}>
-	</div>
-</section>
-
-<section id="level_1"><{* BlockWeight 1-99 *}>
-	<div class="row">
-		<{include file="`$xoops_theme`/theme_level_1.html"}>
-	</div>
-</section>
-
-<{* xoops contents *}>
-<{if $xoops_contents}>
-<section id="main-content">
-	<div class="row">
-		<div id="ModuleContents"><div class="span12"><{$xoops_contents}></div></div>
-	</div>
-</section>
+<{* contents *}>
+<{if $xoops_dirname == ""}>
+	<{include file="`$xoops_theme`/theme_home.html"}>
+<{else}>
+	<{include file="`$xoops_theme`/theme_modules.html"}>
 <{/if}>
 
-<section id="level_100"><{* BlockWeight 100-199 *}>
-	<div class="row">
-		<{include file="`$xoops_theme`/theme_level_100.html"}>
-	</div>
-</section>
-
-<section id="level_200"><{* BlockWeight 200-499 *}>
-	<div class="row">
-		<{include file="`$xoops_theme`/theme_level_200.html"}>
-	</div>
-</section>
-
-<section id="level_500"><{* BlockWeight 500-999 *}>
-	<div class="row">
-		<{include file="`$xoops_theme`/theme_level_500.html"}>
-	</div>
-</section>
-
 <{* login block *}>
-	<{include file="`$xoops_theme`/theme_cubelogin_block.html"}>
-<{* End login block *}>
+<{include file="`$xoops_theme`/theme_cubelogin_block.html"}>
 
-<footer id="footer">
+<footer id="footer"><{* include right-column *}>
 	<{include file="`$xoops_theme`/theme_footer.html"}>
 </footer>
 
 <div id="xugj_pm_new_message" class="top-right"></div>
-
-</div><!-- /container -->
 
 </body>
 </html>

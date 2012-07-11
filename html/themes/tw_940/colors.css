@@ -1,0 +1,55 @@
+/******************************************************************************/
+/* colors set */
+/******************************************************************************/
+
+/*** If you want to change the default(TwitterBootstrap) color, please remove this line.
+body {
+  color: #333333;
+	background-color:#ffffff;
+}
+a {
+  color: #0088cc;
+}
+a:hover {
+  color: #005580;
+}
+If you want to change the default(TwitterBootstrap) color, please remove this line. ***/
+
+
+/** section level_1 .include left-column at home page **/
+#level_1 {
+	background-color:#ffffff;
+}
+
+/** article .xoops contents at home page **/
+#main-content .home {
+	background-color:#ffffff;
+}
+
+/** section level_2 .include center-left-column at home page **/
+#level_2 {
+	background-color:#ffffff;
+}
+
+/** section level_3 .include center-right-column at home page **/
+#level_3 {
+	background-color:#ffffff;
+}
+
+/** main-contents .include left-column and module-contents at module page **/
+#wrap {
+	background-color:#ffffff;
+}
+
+/** footer **/
+footer, #footer {
+	background-color:#ffffff;
+}
+
+/* for xugj_date */
+.new1 {
+	color:red;
+}
+.new2 {
+	color:orange;
+}

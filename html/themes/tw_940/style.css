@@ -1,59 +1,43 @@
-
-header.h_m {
-	height:70px;
+body 				{
+	font-family:'ƒqƒ‰ƒMƒmŠpƒS Pro W3','Hiragino Kaku Gothic Pro','ƒƒCƒŠƒI',Meiryo,'‚l‚r ‚oƒSƒVƒbƒN',sans-serif, 'Droid Serif',"Helvetica Neue", Helvetica,;
+	padding-top: 60px;
+	-webkit-transition-property: font-size;
+	-moz-transition-property: font-size;
+	transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s;
+	-webkit-transition-timing-function: linear, ease-in;
+	-moz-transition-timing-function: linear, ease-in;
+	transition-timing-function: linear, ease-in;
 }
 
-#ModuleContents {
-	padding:10px 0 20px 0;
-}
-.nav a	{ display: block; float: left; padding: 10px 5px; text-decoration: none;border:none;}
-.nav a:hover			{ text-decoration: none; }
-.nav a:active		{ position: relative; top: 0; }
-.nav ul {
-	margin:0 250px 0 150px;
-}
-.nav li {
-	list-style: none;
-	float: left;
-}
-.nav li a {
-	text-decoration: none;
-	padding: 12px 10px;
-	display: block;
+header#overview {
 }
 
-#logo {
-	position:absolute;
-	top:0;
-	left:0;
-	width:150px;
-	height:150px;
-	z-index:1001;
-	padding-top:18px;
+#level_1 , #level_2 , #level_3 {
+	padding:20px 0 30px;
+}
+#main-content {
+	padding:20px 0 30px;
+}
+body.home #main-content {
+	padding:20px 0 30px;
 }
 
-#logo a.sitename {
-	font-size: 150%;
-	font-family: 'Droid Serif', serif;
-	font-weight:bold;
-	padding:0 0 0 18px;
-	line-height:30px;
-	border:none;
+#side_bar {
+	padding-top:20px;
 }
 
-
-/*------------------------------------*\
-p 					{ padding: 0 5px 0 5px; }
-\*------------------------------------*/
-
-ul 					{ list-style: none; }
-ul li 				{ margin: 0 5px; }
+.fixed2 {
+  top: 28px;
+}
 
 #footer ,
 footer {
 	width: 100%;
 	min-height:50px;
-	padding: 5px 0;
+	padding: 5px 0 40px;
 	text-align:center;
 	line-height:40px;
 	font-size: 90%;
@@ -64,18 +48,23 @@ footer a {
 }
 
 #footer_menu {
-	padding-top:30px;
+	padding-top:10px;
 }
 
-#footer #level_1000,
-footer #level_1000{
+#level_foot {
+	margin-top:30px;
+	text-align:left;
+}
+
+#footer #level_foot,
+footer #level_foot{
 	font-size: 100%;
 	line-height:2em;
 }
-#footer #level_1000 h3,
-footer #level_1000 h3,
-#footer #level_1000 h4,
-footer #level_1000 h4 {
+#footer #level_foot h3,
+footer #level_foot h3,
+#footer #level_foot h4,
+footer #level_foot h4 {
 	font-size: 110%;
 	line-height:2em;
 }
@@ -87,13 +76,17 @@ pre {overflow: auto; font-size: 12px; }
 .xoopsCode {
   font-family: "Courier New",Courier,monospace;
 	font-size:12px;
+	width:80%;
   padding: 6px;
 	margin:10px;
 	margin-bottom:0;
 	word-break: break-all;
+	overflow: auto;
 }
 .xoopsQuote {
+	width:80%;
   padding: 3px;
+	overflow: auto;
 }
 
 .xoopsCode pre{
@@ -113,15 +106,231 @@ pre {overflow: auto; font-size: 12px; }
 	margin-left:5px;
 }
 
+#theme_login_block_div ,
+#theme_login_block {
+	width:240px;
+	height:240px;
+}
+#privatemessages {
+	list-style:none;
+}
+
 #usermenu li ,
 ul#privatemessages li,
 #mainmenu li {
-	line-height:1.5;
-	margin:0 0 0 7px;
+	width:98%;
+	margin:0;
+}
+#usermenu li a,
+ul#privatemessages li a,
+#mainmenu li a{
+	padding:4px 10px;
+}
+#usermenu li a.menuSub,
+#mainmenu li a.menuSub{
+	padding:2px 0 2px 20px;
+	font-size:85%;
 }
 
-#theme_login_block_div ,
-#theme_login_block {
-	width:220px;
-	height:220px;
+.padding10 {
+	padding-left:10px;
 }
+
+/* bootstrap add */
+
+h1,h2,h3,h4,h5,h6 {
+	padding-bottom:7px;
+}
+
+h1,h2,h3 {
+	font-family:"ƒqƒ‰ƒMƒm–¾’© Pro W6", "Hiragino Mincho Pro", "HGS–¾’©E", "‚l‚r ‚o–¾’©", serif;
+	font-weight:bold;
+	font-weight:900;
+	text-shadow: 1px 1px 0px rgba(240, 240, 240, 0.6);
+}
+.row {
+	text-shadow: 1px 1px 0px rgba(240, 240, 240, 0.6);
+}
+
+#mainmenu > li > a.active,
+#mainmenu > li > a.active:hover ,
+#usermenu > li > a.active,
+#usermenu > li > a.active:hover ,
+.nav-list > li > a.active,
+.nav-list > li > a.active:hover ,
+.bulletin #mainmenu li.lastChild a {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #0088cc;
+}
+
+[class*="span"] {
+	padding-bottom:20px;
+}
+[class*="grid"] {
+  float: left;
+  margin-left: 20px;
+	padding-bottom:20px;
+}
+.grid12 {
+  width: 940px;
+}
+.grid11 {
+  width: 860px;
+}
+.grid10 {
+  width: 780px;
+}
+.grid9 {
+  width: 700px;
+}
+.grid8 {
+  width: 620px;
+}
+.grid7 {
+  width: 540px;
+}
+.grid6 {
+  width: 460px;
+}
+.grid5 {
+  width: 380px;
+}
+.grid4 {
+  width: 300px;
+}
+.grid3 {
+  width: 220px;
+}
+.grid2 {
+  width: 140px;
+}
+.grid1 {
+  width: 60px;
+}
+
+
+@media (max-width: 767px) {
+  [class*="grid"] {
+    display: block;
+    float: none;
+    width: auto;
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  [class*="grid"] {
+    float: left;
+    margin-left: 20px;
+  }
+  .grid12 {
+    width: 724px;
+  }
+  .grid11 {
+    width: 662px;
+  }
+  .grid10 {
+    width: 600px;
+  }
+  .grid9 {
+    width: 538px;
+  }
+  .grid8 {
+    width: 476px;
+  }
+  .grid7 {
+    width: 414px;
+  }
+  .grid6 {
+    width: 352px;
+  }
+  .grid5 {
+    width: 290px;
+  }
+  .grid4 {
+    width: 228px;
+  }
+  .grid3 {
+    width: 166px;
+  }
+  .grid2 {
+    width: 104px;
+  }
+  .grid1 {
+    width: 42px;
+  }
+
+}
+@media (min-width: 1200px) {
+  [class*="grid"] {
+    float: left;
+    margin-left: 30px;
+  }
+  .grid12 {
+    width: 1170px;
+  }
+  .grid11 {
+    width: 1070px;
+  }
+  .grid10 {
+    width: 970px;
+  }
+  .grid9 {
+    width: 870px;
+  }
+  .grid8 {
+    width: 770px;
+  }
+  .grid7 {
+    width: 670px;
+  }
+  .grid6 {
+    width: 570px;
+  }
+  .grid5 {
+    width: 470px;
+  }
+  .grid4 {
+    width: 370px;
+  }
+  .grid3 {
+    width: 270px;
+  }
+  .grid2 {
+    width: 170px;
+  }
+  .grid1 {
+    width: 70px;
+  }
+}
+
+/* bootstrap add .end */
+
+
+/* for xpresMe */
+#xpress_wrap #xpress_content .xpress-post {
+	float:left;
+  width: 460px;
+	min-height:150px;
+  margin-left: 20px;
+	padding-bottom:30px;
+}
+/* for xpresMe .end */
+
+/* for bulletin */
+/* 
+body.bulletin .item {
+	float:left;
+  width: 370px;
+	min-height:150px;
+  margin-left: 20px;
+	padding-bottom:30px;
+}
+*/
+/* for bulletin .end */
+
+
+#socialbutton_div {
+	clear:both;
+}
+
