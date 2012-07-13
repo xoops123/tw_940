@@ -1,0 +1,55 @@
+<{strip}>
+<{* メタ情報の書き方は，区切り文字 || を挟んで，「ページタイトル」||「METAタグ（キーワード）」||「METAタグ（Description）説明」の順を守って記述してください。情報記入のない場合は、XOOPSの管理画面で設定した内容が入ります。モジュールによっては、descriptionに記事に応じた内容が入るものもあります。 *}>
+<{if $xoops_dirname == "mylinks"}>
+  <{if $smarty.get.cid == 1}>
+	xoopsモジュールの開発，配布（公開）サイトの情報－<{$cname}>||キーワード１||xoopsモジュールを開発し，公開しているサイトを集めました。どんなモジュールがあって，どんなことができるのかを知りたいときに役立つと思います。
+  <{elseif $smarty.get.cid == 2}>
+	  xoopsのインストール，設定等に関する解説およびダウンロードサイトの情報－<{$cname}>||キーワード２||xoopsにはじめて触れる方が迷い，悩むと思われるインストール方法や，システム管理の設定方法などを詳しく説明しているサイトの紹介です。意外な情報を見つけることも多いですね。
+  <{else}>
+	  おすすめリンク集：xoopsおよび関連技術サイトへのリンク集です。||キーワード３||xoops，テーマ・モジュール配布サイト，HTMLやCSSの解説サイト，xoopsの管理・運用・カスタマイズに便利なソフト，学習に欠かせない書籍などの資料の紹介などをしています。
+  <{/if}>
+<{elseif $xoops_dirname == "gnavi"}>
+	<{if $photo.cid =="1"}>
+		<{assign var="gnavibody" value=$photo.description|strip_tags|strip}>
+		<{assign var="xoops_meta_description" value=$gnavibody|mb_substr:"0":"160"}>
+		<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+	<{else}>
+		<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+	<{/if}>
+<{elseif $xoops_dirname == "d3forum"}>
+	<{* トップページの場合 *}>
+	<{if substr($xoops_requesturi,-9) == '/index.php' or substr($xoops_requesturi,-1) == '/'}>
+		<{$category.title}>||<{$xoops_meta_keywords}>||<{$category.desc}>
+	<{else}>
+		<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+	<{/if}>
+<{elseif $xoops_dirname == "d3diary"}>
+		<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "wordpress"}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "xpress"}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "xpwiki"}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "webphoto"}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "piCal"}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "pico"}>
+	<{assign var="mybody" value=$content.body|strip_tags|strip}>
+	<{assign var="xoops_meta_description" value=$mybody|mb_substr:"0":"160"}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "ccenter"}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{elseif $xoops_dirname == "bulletin"}>
+	<{if substr($xoops_requesturi,-9) == '/index.php' or substr($xoops_requesturi,-1) == '/'}>
+		ここはお知らせのトップページです。||ここはお知らせのキーワード||ここにはお知らせの説明を書きましょう
+	<{else}><{* bulletinは、トップページ以外は本文がdescriptionに挿入される *}>
+		<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+	<{/if}>
+<{elseif $xoops_dirname == ""}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{else}>
+	<{$xoops_pagetitle}>||<{$xoops_meta_keywords}>||<{$xoops_meta_description}>
+<{/if}>
+<{/strip}>

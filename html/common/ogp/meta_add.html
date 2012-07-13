@@ -1,0 +1,61 @@
+<meta charset="<{$xoops_charset}>" />
+<{strip}><{* メタ情報等を適切に設定する  *}>
+<title><{$xoops_sitename}>
+	<{if $xoops_dirname == ""}>
+		 - <{$xoops_slogan}>
+	<{else}><{* module title *}>
+		 - <{include file="`$smarty.const.XOOPS_ROOT_PATH`/common/ogp/moduletitle.html"}>
+	<{/if}>
+</title>
+<{/strip}>
+<{strip}>
+<{include_php file="`$smarty.const.XOOPS_ROOT_PATH`/common/ogp/server_url_is.php"}>
+<{* メタ情報を設定ファイルの読み込み  *}>
+<{* 
+  **** altsysでカスタムテンプレートを作って、それを読みこむ場合 ****
+<{include file="db:meta_info.html" assign = "metainfo" cname=$category_path|strip_tags|strip:""|replace:"メイン":""|replace:":":""|replace:"&nbsp;":""}>
+ *}>
+<{include file="`$smarty.const.XOOPS_ROOT_PATH`/common/ogp/meta_info.html" assign = "metainfo" cname=$category_path|strip_tags|strip:""|replace:"メイン":""|replace:":":""|replace:"&nbsp;":""}>
+<{* メタ情報のアサイン *}>
+<{assign var="meta_info" value="||"|explode:$metainfo}>
+	<{if $meta_info.0}>
+	  <{assign var="xoops_pagetitle" value=$meta_info.0}>
+	<{/if}>
+	<{if $meta_info.1}>
+	  <{assign var="xoops_meta_keywords" value=$meta_info.1}>
+	<{/if}>
+	<{if $meta_info.2}>
+	  <{assign var="xoops_meta_description" value=$meta_info.2}>
+	<{/if}>
+<{/strip}>
+<meta property="og:type" content="website">
+<{* ページタイトルがある場合はタイトルを付加。それ以外はスローガンを付加。 *}>
+<{strip}>
+<meta property="og:title" content="
+	<{$xoops_sitename}>
+	<{if $xoops_dirname == ""}>
+		,<{$xoops_slogan}>
+	<{else}><{* module title *}>
+		,<{include file="`$smarty.const.XOOPS_ROOT_PATH`/common/ogp/moduletitle.html"}>
+	<{/if}>
+">
+<{/strip}>
+<{* イメージは、gnaviの時は記事の画像。それ以外は指定場所のイメージ *}>
+<meta property="og:image" content="<{if $photo.ext}><{$photo.imgsrc_photo}><{else}><{$xoops_url}>/common/ogp/user.gif<{/if}>">
+<meta property="og:site_name" content="<{$xoops_sitename}>">
+<meta property="og:description" content="<{$xoops_meta_description}>">
+<{strip}>
+<meta name="keywords" content="
+<{if ! $xoops_dirname == ""}>
+	<{include file="`$smarty.const.XOOPS_ROOT_PATH`/common/ogp/moduletitle.html"}>,
+<{/if}>
+<{$xoops_meta_keywords}>" />
+<{/strip}>
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<{* meta copyright is not HTML5
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+*}>
+<{* メタ情報等を適切に設定する ここまで *}>
