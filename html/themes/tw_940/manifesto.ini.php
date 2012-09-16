@@ -5,7 +5,7 @@
 Name="tw_940"
 Depends=Legacy_RenderSystem,legacy
 Url="http://xoops123.com/"
-Version="0.1"
+Version="0.11"
 
 [Theme]
 RenderSystem=Legacy_RenderSystem
