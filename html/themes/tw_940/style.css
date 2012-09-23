@@ -1,5 +1,7 @@
+@charset "UTF-8";
+
 body 				{
-	font-family:'ƒqƒ‰ƒMƒmŠpƒS Pro W3','Hiragino Kaku Gothic Pro','ƒƒCƒŠƒI',Meiryo,'‚l‚r ‚oƒSƒVƒbƒN',sans-serif, 'Droid Serif',"Helvetica Neue", Helvetica,;
+	font-family:'ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W3','Hiragino Kaku Gothic Pro','ãƒ¡ã‚¤ãƒªã‚ª',Meiryo,'ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯',sans-serif, 'Droid Serif',"Helvetica Neue", Helvetica,;
 	padding-top: 60px;
 	-webkit-transition-property: font-size;
 	-moz-transition-property: font-size;
@@ -143,7 +145,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1,h2,h3 {
-	font-family:"ƒqƒ‰ƒMƒm–¾’© Pro W6", "Hiragino Mincho Pro", "HGS–¾’©E", "‚l‚r ‚o–¾’©", serif;
+	font-family:"ãƒ’ãƒ©ã‚®ãƒæ˜æœ Pro W6", "Hiragino Mincho Pro", "HGSæ˜æœE", "ï¼­ï¼³ ï¼°æ˜æœ", serif;
 	font-weight:bold;
 	font-weight:900;
 	text-shadow: 1px 1px 0px rgba(240, 240, 240, 0.6);
