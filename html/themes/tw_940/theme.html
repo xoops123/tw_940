@@ -9,7 +9,6 @@
 <{include file="`$smarty.const.XOOPS_ROOT_PATH`/common/ogp/meta_add.html"}>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" type="text/css" href="<{$xoops_imageurl}>css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="<{$xoops_imageurl}>css/bootstrap-responsive.css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 <script type="text/javascript"><{$xoops_js|regex_replace:"/(\/\/\-\->|<!\-\-)/":""}></script>
 <{if ! $xcl22_jquery_is_already and ! $xugj_jquery_is_already}>
@@ -42,24 +41,16 @@
 <div class="navbar navbar-fixed-top<{if $xoops_isadmin}><{if $xoops_dirname == "wordpress"}> fixed2<{elseif $xoops_dirname == "xpress"}> fixed2<{/if}><{/if}>">
   <div class="navbar-inner">
     <div class="container">
-      <div class="nav-collapse collapse">
         <ul class="nav">
-			<{if $menu0.dirname == $xoops_dirname}>
-				<li class="active"><a href="<{$xoops_url}>/"><{$smarty.const._THEME_LANGUAGE_HOME_NAME}></a></li>
-			<{else}>
-				<li><a href="<{$xoops_url}>/"><{$smarty.const._THEME_LANGUAGE_HOME_NAME}></a></li>
-			<{/if}>
-			<{foreach from=$xugj_menus item="menu0"}>
-						<{if $menu0.dirname == $xoops_dirname}>
-								<{assign var="xugj_menus1" value=$menu0.sub}>
-								<{assign var="menu0_class" value="s"}>
-						<{else}>
-								<{assign var="menu0_class" value=""}>
-						<{/if}>
-				<li<{if $menu0.dirname == $xoops_dirname}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/<{$menu0.dirname}>/<{$menu0.url}>"><{$menu0.name}></a></li>
-			<{/foreach}>
+					<{if $menu0.dirname == $xoops_dirname}>
+						<li class="active"><a href="<{$xoops_url}>/"><{$smarty.const._THEME_LANGUAGE_HOME_NAME}></a></li>
+					<{else}>
+						<li><a href="<{$xoops_url}>/"><{$smarty.const._THEME_LANGUAGE_HOME_NAME}></a></li>
+					<{/if}>
+					<{foreach from=$xugj_menus item="menu0"}>
+						<li<{if $menu0.dirname == $xoops_dirname}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/<{$menu0.dirname}>/<{$menu0.url}>"><{$menu0.name}></a></li>
+					<{/foreach}>
         </ul>
-      </div>
 	</div>
   </div>
 </div>

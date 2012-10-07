@@ -1,8 +1,5 @@
-@charset "UTF-8";
-
 body 				{
 	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif, 'Droid Serif',"Helvetica Neue", Helvetica,;
-	padding-top: 60px;
 	-webkit-transition-property: font-size;
 	-moz-transition-property: font-size;
 	transition-property: font-size;
@@ -336,12 +333,13 @@ body.bulletin .item {
 	clear:both;
 }
 
-input,
-textarea {
-  width: 94%;
+@media (min-width: 1200px) {
+	body {
+		padding-top: 60px;
+  }
 }
-
-#area_dhtmltarea input#textAddtext {
-	width:300px;
+@media (min-width: 980px) and (max-width: 1200px) {
+	body {
+		padding-top: 60px;
+  }
 }
-
